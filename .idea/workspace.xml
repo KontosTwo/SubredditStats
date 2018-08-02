@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc24bcc8-b8b2-4e15-a8c1-0a616d482ec4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/database.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/process/v1_graphs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/process/v1_graphs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cli.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,13 +34,13 @@
         <counts>
           <entry key="Python Console" value="1225" />
           <entry key="dummy" value="5" />
-          <entry key="py" value="4297" />
+          <entry key="py" value="4562" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="5522" />
+          <entry key="Python" value="5787" />
         </counts>
       </usages-collector>
     </session>
@@ -73,11 +70,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/cli/cli.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+                <state relative-caret-position="330">
+                  <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
                   <folding>
-                    <element signature="e#0#12#0" expanded="true" />
-                    <marker date="1533242275590" expanded="true" signature="189:313" ph="..." />
+                    <element signature="e#24#39#0" expanded="true" />
+                    <marker date="1533244508114" expanded="true" signature="354:452" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -413,7 +410,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="453" y="63" width="1371" height="837" extended-state="0" />
+    <frame x="100" y="63" width="1371" height="837" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -421,11 +418,11 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" weight="0.32885906" />
       <window_info anchor="bottom" id="Python Console" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -527,11 +524,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cli/cli.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1533242275590" expanded="true" signature="189:313" ph="..." />
+            <element signature="e#24#39#0" expanded="true" />
+            <marker date="1533244508114" expanded="true" signature="354:452" ph="..." />
           </folding>
         </state>
       </provider>
