@@ -48,6 +48,14 @@ def get_comment_by_subreddit(subreddit):
     session.close()
     return query.all()
 
+def get_all_comments():
+    session = Session()
+    query = session.query(Comment)
+
+
+    session.close()
+    return query.all()
+
 def query_stream(q):
     offset = 0
     while True:

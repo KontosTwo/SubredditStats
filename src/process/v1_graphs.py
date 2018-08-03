@@ -2,12 +2,18 @@ from src.model.dao import *
 
 import matplotlib.pyplot as py
 import numpy
+import json
+import re
 
 def most_common_words_by_subreddit(subreddit):
     word_count = {}
-    comments = get_comment_by_subreddit(subreddit)
+    comments = None
+    if (subreddit == "all"):
+        comments = get_all_comments()
+    else:
+        comments = get_comment_by_subreddit(subreddit)
     for comment in comments:
-        words = comment.text.split()
+        words = comment.text.lower().split()
         for word in words:
             if word in functional_words:
                 continue
@@ -31,9 +37,87 @@ def most_common_words_by_subreddit(subreddit):
     py.xticks(y_pos, x_axis)
     py.gcf().set_size_inches(60, 30)
     py.savefig("./graph")
+    py.close()
+
+
+def word_appearance_to_upvotes(subreddit):
+    comments = None
+    if(subreddit == "all"):
+        comments = get_all_comments()
+    else:
+        comments = get_comment_by_subreddit(subreddit)
+
+    word_upvotes = {}
+    for comment in comments:
+        words = comment.text.lower().split()
+
+
+        for word in words:
+            if word in functional_words:
+                continue
+            if (word not in word_upvotes):
+                word_upvotes[word] = comment.upvotes
+            else:
+                word_upvotes[word] += comment.upvotes
+
+    sorted_word_upvotes = list(reversed(sorted(word_upvotes.items(),key=lambda k_v: k_v[1])))
+    trimmed = sorted_word_upvotes[:50]
+
+    x_axis = [i[0] for i in trimmed]
+    y_axis = [i[1] for i in trimmed]
+
+    y_pos = numpy.arange(len(x_axis))
+
+    py.bar(y_pos, y_axis, align="center")
+    py.xticks(rotation=90)
+    py.ylabel("total upvotes")
+    py.xlabel("word")
+    py.title("most upvoted words in /r/" + subreddit)
+    py.xticks(y_pos, x_axis)
+    py.gcf().set_size_inches(60, 30)
+    py.savefig("./graph")
+    py.close()
+
+def word_controversiality(subreddit):
+    comments = None
+    if (subreddit == "all"):
+        comments = get_all_comments()
+    else:
+        comments = get_comment_by_subreddit(subreddit)
+
+    word_controversiality = {}
+    for comment in comments:
+        words = comment.text.lower().split()
+        for word in words:
+            if word in functional_words:
+                continue
+            if (word not in word_controversiality):
+                word_controversiality[word] = 1 if comment.controversiality else 0
+            else:
+                word_controversiality[word] += 1 if comment.controversiality else 0
+
+    sorted_word_controversiality = list(reversed(sorted(word_controversiality.items(), key=lambda k_v: k_v[1])))
+    trimmed = sorted_word_controversiality[:50]
+
+    x_axis = [i[0] for i in trimmed]
+    y_axis = [i[1] for i in trimmed]
+
+    y_pos = numpy.arange(len(x_axis))
+
+    py.bar(y_pos, y_axis, align="center")
+    py.xticks(rotation=90)
+    py.ylabel("total upvotes")
+    py.xlabel("word")
+    py.title("most upvoted words in /r/" + subreddit)
+    py.xticks(y_pos, x_axis)
+    py.gcf().set_size_inches(60, 30)
+    py.savefig("./graph")
+    py.close()
+
 
 
 functional_words = {
+'*',
 'a' ,
 'about' ,
 'above' ,
@@ -139,7 +223,7 @@ functional_words = {
 'his' ,
 'how' ,
 'however' ,
-'I' ,
+'i' ,
 'ie' ,
 'if' ,
 'in' ,
